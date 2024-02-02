@@ -42,7 +42,8 @@ const Login = ({ setLogin }) => {
 
       navigate("/landing");
     } catch (error) {
-      toast.error("Error Occured", {
+
+      toast.error(error.response.data.message, {
         autoClose: 2000,
         theme: "dark",
       });
