@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lexend+Peta:wght@100&family=Outfit:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Great+Vibes&family=Lexend+Peta:wght@100&family=Outfit:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Goblin+One&family=Great+Vibes&family=Lexend+Peta:wght@100&family=Outfit:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andika&family=Cherry+Cream+Soda&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+body{
+  background: rgb(0,2,13);
+  background: linear-gradient(142deg, rgba(0,2,13,1) 0%, rgba(8,14,57,1) 15%, rgba(17,25,75,1) 30%, rgba(17,28,97,1) 45%, rgba(35,42,107,1) 60%, rgba(34,37,97,1) 75%, rgba(17,11,59,1) 90%, rgba(16,14,33,1) 100%);
+}
+
+h1,h4,p,a{
+  color: white;
+  text-decoration: none;
+}
+button{
+  cursor: pointer;
+}
+
+ul{
+  list-style-type: none;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(105, 104, 104);
+  border-radius: 100px;
+}

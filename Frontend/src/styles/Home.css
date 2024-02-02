@@ -1,0 +1,153 @@
+.login-container{
+    color: white;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.login-header h1{
+    font-family: 'Great Vibes','cursive';
+    line-height: 1;
+    font-size: 7.5rem;
+    font-weight: 100;
+    margin : 3rem 0 0.5rem 0;
+}
+
+
+.login-header h4{
+    font-family: 'Fontdiner Swanky', serif;
+    font-size: 1.4rem;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+}
+
+.login-register{
+    margin: 2rem 0;
+    padding-bottom: 4rem;
+    width: 100%;
+    display: flex;
+    border-radius: 1rem;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.login-register input{
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    width: 24rem;
+    height: 2.5rem;
+    margin-bottom: 1rem;
+
+}
+
+.login-part{
+    padding: 1rem 2rem 2rem 2.2rem;
+    display: flex;
+    background: rgb(16,8,68);
+    background: linear-gradient(142deg, rgba(16,8,68,1) 0%, rgba(16,8,68,1) 100%);
+    border-radius: 2rem;
+    box-shadow: 0.3rem 0.3rem 0.3rem 0.3rem black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.login-part h2{
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 0.7rem;
+}
+
+.not-a-member{
+    display: flex;
+    margin-bottom: 1rem;
+}
+.not-a-member p:last-child{
+    margin-left: 0.5rem;
+    color: aquamarine;
+    cursor: pointer;
+}
+.login-part form{
+    display: flex;
+    flex-direction: column;
+}
+.e-label{
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: 0.4rem;
+}
+.btn-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+    width: 100%;
+}
+.btn-container button{
+    color: white;
+    border: none;
+    font-size: medium;
+    padding: 0.5rem;
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+}
+.btn-container button:hover{
+    box-shadow: 0px 0px 3px 3px rgba(66,133,244,0.3);
+    transition: 0.218s;
+}
+.btn-container p{
+    margin: 0.5rem 0rem;
+}
+.btn-login{
+    background-color: green;
+    padding: 0.8rem;
+    margin-top: 0.8rem;
+}
+.btn-gmail{
+    background-color: red;
+    width: 24rem;
+}
+
+
+@media screen and (max-width: 900px){
+
+    .login-header h1{
+        font-size: 4rem;
+    }
+    .login-header h4{
+        font-size: 1rem;
+    }
+    .login-register{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-part h2{
+        font-size: 1.8rem;
+    }
+    .register-part h2{
+        font-size: 1.8rem;
+    }
+    .login-register input{
+        max-width: 24rem;
+        min-width: 18rem;
+        width: 90%;
+    }
+    .btn-container button{
+        width: 70%;
+    }
+    .e-label{
+        font-size: small;
+    }
+}

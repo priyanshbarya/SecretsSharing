@@ -1,0 +1,153 @@
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.nav-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 3rem 2rem 3rem;
+    font-size: 1.2rem;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    border-radius: 0 0 6px 6px;
+    /* background-color: black; */
+    z-index: 10;
+    border-bottom: 1px solid #aaa;
+}
+.nav-header h1{
+    font-family: 'Great Vibes','cursive';
+}
+.nav-header-bg{
+    transition: 0.5s;
+    background: rgb(0,2,13);
+    background: linear-gradient(142deg, rgba(0,2,13,1) 0%, rgba(8,14,57,1) 15%, rgba(17,25,75,1) 30%, rgba(17,11,59,1) 90%, rgba(16,14,33,1) 100%);
+}
+.logout-icon{
+    display: flex;
+    color: white;
+    align-items: center;
+    cursor: pointer;
+}
+.logout-icon img{
+    height: 2rem;
+    margin-left: 0.1rem;
+
+}
+
+.feed-portal{
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding: 6rem 0;
+}
+.feed-side{
+    width: 100%;
+}
+.feed-mid{
+    width: 300%;
+}
+.create-container{
+    padding: 2rem 1rem;
+    background: rgb(16,8,68);
+    background: linear-gradient(142deg, rgb(18, 13, 39) 0%, rgb(10, 10, 34) 100%);
+    border-radius: 2rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+
+}
+.create-container button{
+    margin-left: 1rem;
+    font-size: 1rem;
+    background-color: rgb(238, 14, 14);
+    border-style: none;
+    color: white;
+    padding: 0.8rem 2rem;
+}
+
+.create-img img{
+    height: 4rem;
+}
+.create-editor textarea{
+    align-items: center;
+    padding: 1rem;
+    border-style: none;
+    resize: vertical;
+}
+
+.feeds-container{
+    margin-top: 2rem;
+    padding: 1rem 1rem;
+    background: rgb(16,8,68);
+    background: linear-gradient(142deg, rgb(18, 13, 39) 0%, rgb(10, 10, 34) 100%);
+    border-radius: 2rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem black;
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+.feed-profile{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #aaa;
+}
+.feed-profile img{
+    height: 3rem;
+
+}
+.feed-profile p{
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    font-size:medium;
+    font-weight:bolder;
+}
+
+.feed-profile p:last-child{
+    margin-left: 1rem;
+    margin-top: 0.8rem;
+    font-weight:bolder;
+    font-size:x-small;
+}
+.secret-container{
+    font-family: 'Andika', sans-serif;
+    margin-left: 1.5rem;
+    padding: 1rem;
+}
+
+@media screen and (max-width:1200px){
+    .feed-mid{
+        width: 90%;
+    }
+    .create-editor textarea{
+        width: 30rem;
+    }
+}
+@media screen and (max-width:900px){
+
+    .create-editor textarea{
+        width: 20rem;
+    }
+}
+@media screen and (max-width:600px){
+    .logout-icon h3{
+        display: none;
+    }
+    .create-editor textarea{
+        width: 8rem;
+    }
+    .create-container button{
+        padding: 0.8rem;
+    }
+}
