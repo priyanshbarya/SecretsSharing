@@ -17,10 +17,9 @@ const postSecrets= asyncHandler(
 
 const getSecrets=asyncHandler(async (req,res)=>{
     try {
-        const allData = await Secret.find();
+        const allData = await Secret.find().sort({$natural:-1});
         res.json(allData);
       } catch (error) {
-        // console.error('Error fetching all data:', error);
         res.status(500);
         throw new Error("Internal Server Error");
       }

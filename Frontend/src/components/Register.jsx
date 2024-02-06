@@ -5,6 +5,8 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import URL from "../url.js";
 import GoogleButton from 'react-google-button'
+import { Oval } from "react-loader-spinner";
+
 
 
 
@@ -12,15 +14,20 @@ const Register = ({ setLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [loading,setLoading]=useState(false);
   const navigate = useNavigate();
 
   const saveUser = async (e) => {
     e.preventDefault();
+    setLoading(true);
+
     if (!email || !password || !confirmPassword) {
       toast.warn("Please Fill All Fields", {
         autoClose: 2000,
         theme: "dark",
       });
+      setLoading(false);
+
       return;
     }
 
@@ -29,6 +36,8 @@ const Register = ({ setLogin }) => {
         autoClose: 2000,
         theme: "dark",
       });
+      setLoading(false);
+
       return;
     }
 
@@ -49,6 +58,7 @@ const Register = ({ setLogin }) => {
         theme: "dark",
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
+      setLoading(false);
 
       navigate("/landing");
     } catch (error) {
@@ -56,6 +66,8 @@ const Register = ({ setLogin }) => {
         autoClose: 2000,
         theme: "dark",
       });
+      setLoading(false);
+
       return;
     }
   };
@@ -112,7 +124,18 @@ const Register = ({ setLogin }) => {
         />
 
         <div className="btn-container">
-          <button className="btn-login">Sign Up</button>
+          <button className="btn-login">{loading?<Oval
+              visible={true}
+              height="20px"
+              width="20px"
+              
+              color="#4fa94d"
+              ariaLabel="oval-loading"
+              wrapperStyle={{}}
+              wrapperClass="loader"
+              />:
+            <p>Sign Up</p>
+            }</button>
         </div>
       </form>
       <div className="btn-container">
