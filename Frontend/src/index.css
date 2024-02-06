@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Great+Vibes&family=Lexend+Peta:wght@100&family=Outfit:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Goblin+One&family=Great+Vibes&family=Lexend+Peta:wght@100&family=Outfit:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Andika&family=Cherry+Cream+Soda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap');
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -10,7 +12,7 @@
 }
 body{
   background: rgb(0,2,13);
-  background: linear-gradient(142deg, rgba(0,2,13,1) 0%, rgba(8,14,57,1) 15%, rgba(17,25,75,1) 30%, rgba(17,28,97,1) 45%, rgba(35,42,107,1) 60%, rgba(34,37,97,1) 75%, rgba(17,11,59,1) 90%, rgba(16,14,33,1) 100%);
+  background: linear-gradient(142deg, rgb(13, 24, 85) 0%, rgb(13, 22, 94) 15%, rgba(17,25,75,1) 30%, rgb(17, 24, 75) 45%, rgba(35,42,107,1) 60%, rgba(34,37,97,1) 75%, rgba(17,11,59,1) 90%, rgba(16,14,33,1) 100%);
 }
 
 h1,h4,p,a{

@@ -2,7 +2,8 @@ import express  from "express";
 import cors from "cors"
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
-import userRoutes from "./routes/userRoutes.js"
+import userRoutes from "./routes/userRoutes.js";
+import secretRoutes from "./routes/secretRoutes.js";
 import { notFound,errorHandler } from "./middleware/errorMiddleware.js";
 
 dotenv.config();
@@ -15,7 +16,9 @@ app.use(express.json());
 app.get("/",(req,res)=>{
     res.send("Hello World!")
 });
-app.use('/api/user/',userRoutes)
+
+app.use('/secrets/',secretRoutes);
+app.use('/api/user/',userRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

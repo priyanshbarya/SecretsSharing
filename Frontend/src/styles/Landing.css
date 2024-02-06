@@ -40,6 +40,10 @@
     margin-left: 0.1rem;
 
 }
+.loader{
+    display: flex;
+    justify-content: center;
+}
 
 .feed-portal{
     position: relative;
@@ -51,7 +55,7 @@
     width: 100%;
 }
 .feed-mid{
-    width: 300%;
+    width: 1000%;
 }
 .create-container{
     padding: 2rem 1rem;
@@ -60,19 +64,63 @@
     border-radius: 2rem;
     box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem black;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns:  auto 70 auto auto ;
+    gap: 10px;
     border-radius: 5px;
 
 }
+.creat-post-heading{
+    font-family: 'Fontdiner Swanky', serif;
+    font-size: 1.5rem;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    margin-left: 10px;
+}
+.create-editor{
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+    color: black;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    border-radius: 6px;
+}
+.quill{
+    border-radius: 6px;
+}
+.ql-editor p{
+    color: black;
+    font-weight: 500;
+}
+.ql-container {
+    min-height: 10em;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    background: #fefcfc;
+  }
+  
+.ql-toolbar {
+    background: #eaecec;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    border-bottom: none;
+  }
+    
 .create-container button{
-    margin-left: 1rem;
+    margin-left: 10px;
     font-size: 1rem;
     background-color: rgb(238, 14, 14);
     border-style: none;
     color: white;
     padding: 0.8rem 2rem;
+    text-align: center;
+    border-radius: 6px;
+    width: 50%;
+}
+.create-container button:hover{
+    box-shadow: 0px 0px 3px 3px rgba(66,133,244,0.3);
+    transition: 0.218s;
 }
 
 .create-img img{
@@ -88,8 +136,8 @@
 .feeds-container{
     margin-top: 2rem;
     padding: 1rem 1rem;
-    background: rgb(16,8,68);
-    background: linear-gradient(142deg, rgb(18, 13, 39) 0%, rgb(10, 10, 34) 100%);
+    background: rgb(10 6 38);
+    /* background: linear-gradient(142deg, rgb(18, 13, 39) 0%, rgb(10, 10, 34) 100%); */
     border-radius: 2rem;
     box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem black;
 
@@ -110,15 +158,18 @@
 .feed-profile p{
     margin-left: 0.5rem;
     margin-top: 0.5rem;
-    font-size:medium;
+    font-size:18px;
     font-weight:bolder;
+    font-family: 'Work Sans', sans-serif;
+
 }
 
 .feed-profile p:last-child{
     margin-left: 1rem;
     margin-top: 0.8rem;
     font-weight:bolder;
-    font-size:x-small;
+    font-size:12px;
+    color: rgb(50, 138, 165);
 }
 .secret-container{
     font-family: 'Andika', sans-serif;
@@ -126,28 +177,19 @@
     padding: 1rem;
 }
 
-@media screen and (max-width:1200px){
+/* @media screen and (max-width:1200px){
     .feed-mid{
-        width: 90%;
+        width: 300%;
     }
-    .create-editor textarea{
-        width: 30rem;
-    }
-}
-@media screen and (max-width:900px){
 
-    .create-editor textarea{
-        width: 20rem;
-    }
-}
+} */
+
 @media screen and (max-width:600px){
     .logout-icon h3{
         display: none;
     }
-    .create-editor textarea{
-        width: 8rem;
-    }
-    .create-container button{
+
+    /* .create-container button{
         padding: 0.8rem;
-    }
+    } */
 }
