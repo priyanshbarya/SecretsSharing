@@ -3,16 +3,16 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-import URL from "../url.js";
-import GoogleButton from 'react-google-button'
+import GoogleButton from "react-google-button";
 import { Oval } from "react-loader-spinner";
-
 
 const Login = ({ setLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading,setLoading]=useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const URL = process.env.REACT_APP_BASE_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,8 +34,8 @@ const Login = ({ setLogin }) => {
         },
       };
 
-      const { data } = await axios.post(URL+
-        "/api/user/login",
+      const { data } = await axios.post(
+        URL + "/api/user/login",
         { email, password },
         config
       );
@@ -48,7 +48,6 @@ const Login = ({ setLogin }) => {
 
       navigate("/landing");
     } catch (error) {
-
       toast.error(error.response.data.message, {
         autoClose: 2000,
         theme: "dark",
@@ -57,6 +56,10 @@ const Login = ({ setLogin }) => {
 
       return;
     }
+  };
+
+  const responseGoogle = () => {
+    window.open(URL + "/auth/google", "_self");
   };
 
   return (
@@ -98,26 +101,33 @@ const Login = ({ setLogin }) => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <div className="btn-container">
-          <button className="btn-login">{loading?<Oval
-              visible={true}
-              height="20px"
-              width="20px"
-              
-              color="#4fa94d"
-              ariaLabel="oval-loading"
-              wrapperStyle={{}}
-              wrapperClass="loader"
-              />:
-            <p>Sign in</p>
-            }</button>
+          <button className="btn-login">
+            {loading ? (
+              <Oval
+                visible={true}
+                height="20px"
+                width="20px"
+                color="#4fa94d"
+                ariaLabel="oval-loading"
+                wrapperStyle={{}}
+                wrapperClass="loader"
+              />
+            ) : (
+              <p>Sign in</p>
+            )}
+          </button>
         </div>
       </form>
       <div className="btn-container">
         <p>OR</p>
         <GoogleButton
-            style={{backgroundColor: "rgb(59 31 60)",width: "100%",borderRadius:"5px"}}
-            onClick={() => { console.log('Google button clicked') }}
-          />
+          style={{
+            backgroundColor: "rgb(59 31 60)",
+            width: "100%",
+            borderRadius: "5px",
+          }}
+          onClick={responseGoogle}
+        />
       </div>
       <ToastContainer />
     </div>

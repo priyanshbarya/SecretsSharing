@@ -3,18 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-import URL from "../url.js";
-import GoogleButton from 'react-google-button'
+import GoogleButton from "react-google-button";
 import { Oval } from "react-loader-spinner";
 
-
-
-
 const Register = ({ setLogin }) => {
+  const URL = process.env.REACT_APP_BASE_URL;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [loading,setLoading]=useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const saveUser = async (e) => {
@@ -48,8 +45,8 @@ const Register = ({ setLogin }) => {
         },
       };
 
-      const { data } = await axios.post(URL+
-        "/api/user",
+      const { data } = await axios.post(
+        URL + "/api/user",
         { email, password },
         config
       );
@@ -71,7 +68,9 @@ const Register = ({ setLogin }) => {
       return;
     }
   };
-
+  const responseGoogle = () => {
+    window.open(URL + "/auth/google", "_self");
+  };
   return (
     <div className="login-part">
       <h2>Sign Up</h2>
@@ -124,27 +123,30 @@ const Register = ({ setLogin }) => {
         />
 
         <div className="btn-container">
-          <button className="btn-login">{loading?<Oval
-              visible={true}
-              height="20px"
-              width="20px"
-              
-              color="#4fa94d"
-              ariaLabel="oval-loading"
-              wrapperStyle={{}}
-              wrapperClass="loader"
-              />:
-            <p>Sign Up</p>
-            }</button>
+          <button className="btn-login">
+            {loading ? (
+              <Oval
+                visible={true}
+                height="20px"
+                width="20px"
+                color="#4fa94d"
+                ariaLabel="oval-loading"
+                wrapperStyle={{}}
+                wrapperClass="loader"
+              />
+            ) : (
+              <p>Sign Up</p>
+            )}
+          </button>
         </div>
       </form>
       <div className="btn-container">
         <p>OR</p>
         <GoogleButton
-            label='Sign up with Google'
-            style={{backgroundColor: "rgb(59 31 60)",width: "100%"}}
-            onClick={() => { console.log('Google button clicked') }}
-          />
+          label="Sign up with Google"
+          style={{ backgroundColor: "rgb(59 31 60)", width: "100%" }}
+          onClick={responseGoogle}
+        />
       </div>
       <ToastContainer />
     </div>
