@@ -3,6 +3,9 @@
 ## Description
 This project is a simple web application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. This app's main functionality is allowing users to share secrets anonymously. Users can register and log in to the system using their email/password or Google authentication. Once logged in, users can submit their secrets anonymously and view secrets submitted by other users.
 
+## Link to hosting platform
+    http://16.170.245.150:3000/
+
 ## Features
 - User authentication using email/password and Google authentication.
 - Anonymous secret submission.
